@@ -1,0 +1,80 @@
+.header{
+    --background: #1C426E;
+    color:white;
+    text-align: right;
+}
+.card img{
+    border-radius: 7px;
+}
+.footer{
+    --background: #1C426E;
+    color:white;
+    text-align: center;
+    height: 50px;
+}
+.header ion-menu-button{
+    border-radius: 50%;
+    background-color: #FD2E54;
+    width: 40px;
+    height: 40px;
+}
+.objectContent{
+    margin: 20px 14px 0px 14px;
+}
+#card{
+    background-color:rgb(250, 250, 250);
+    border-radius: 2px;
+}
+.objectName h1{
+    padding: 9px 10px 5px 10px;
+}
+.objectName{
+    margin: -10px 14px 0px 14px;
+    display: block;
+    background-color: #FD2E54;
+    height: 50px;
+}
+.comment{
+    background-color: whitesmoke;
+    padding: 15px 0px 8px 15px;
+}
+.btn {
+    height: 40px;
+    border-radius: 10px;
+    background-color: #FD2E54;
+    color: black;
+    font-size: 15px;
+    margin-left: 10px;
+    margin-top: 10px;
+    width: 35px;
+    transform: translate(0px, 2px);
+}
+#content{
+    width: 80%; 
+    height: 40px;
+    border-radius: 10px; 
+    font-size: 15px; 
+    transform: translate(0px, 16px);
+}
+#map {
+    height: 50%;
+    margin: 16px;
+}
+.loader {
+    border: 7px solid #f1f1f1;
+    border-top: 7px solid #FD2E54;
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    -webkit-animation: spin 2s linear infinite;
+    animation: spin 1s linear infinite;
+    margin-top: 30%;
+    margin-left: 36%;
+}
+
+
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}

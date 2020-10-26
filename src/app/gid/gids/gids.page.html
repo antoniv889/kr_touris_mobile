@@ -1,0 +1,32 @@
+<div class="loader" *ngIf="!gids[gids.length-1]"></div>
+
+<ion-header *ngIf="gids[gids.length-1]">
+    <ion-toolbar class="header">
+        <ion-buttons slot="start">
+            <ion-menu-button>
+
+            </ion-menu-button>
+        </ion-buttons>
+        <ion-title>
+            Гіди
+        </ion-title>
+    </ion-toolbar>
+</ion-header>
+
+
+<ion-content class="mainContent" *ngIf="gids[gids.length-1]">
+    <ion-card class="card" *ngFor="let gid of gids;index as i" routerLink="{{gid.id}}">
+        <ion-card-header>
+            <img src="http://kryvyirih.travel{{gid.img.url}}">
+            <ion-card-title id="cardTitle">
+                {{gid.name}}
+                <p>{{ (gid.gid_desc.length>6)? (gid.gid_desc | slice:0:70)+'..':(gid.gid_desc) }}</p>
+            </ion-card-title>
+
+        </ion-card-header>
+        <hr>
+        <ion-card-content class="cardContent">
+        </ion-card-content>
+
+    </ion-card>
+</ion-content>

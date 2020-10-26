@@ -1,0 +1,48 @@
+#header{
+    --background: rgb(28,64,107);
+}
+.mainContent{
+    --background: rgb(28,64,107);
+}
+.imgWrap{
+    text-align: center;
+    border-radius: 100%;
+    margin-top: 10%;     
+}
+.imgWrap img{
+    border-radius: 100%;
+    width: 180px;
+}
+.center{
+    text-align: center;
+    color: white;
+    padding: 10px 20px 0px 20px;
+    margin-top: -20px;
+}
+.center p{
+    font-size: 15px;
+    margin-top: 0px;
+
+}
+.loginbutton{
+    color: white;
+    // font-size: 35px;
+    background-color: red;
+    border-radius: 19px;
+    height: 40px;
+    width: 60%;
+}
+.input{
+    background-color: #ffffff00;
+    text-align: center;
+
+}
+.inputdata {
+    background-color: #1c406b00;
+    color: white;
+    width: 60%;
+    height: 40px;
+    border: 2px solid #0492C2;
+    border-radius: 20px;
+    padding-left: 10px;
+}

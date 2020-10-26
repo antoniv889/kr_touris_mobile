@@ -1,0 +1,56 @@
+<div class="loader" *ngIf="!tours[tours.length-1]" ></div>
+
+<ion-header  *ngIf="tours[tours.length-1]">
+  <ion-toolbar  class="header">
+      <ion-buttons slot="start">
+      <ion-menu-button>
+       
+      </ion-menu-button>
+      </ion-buttons>
+    <ion-title>
+      Екскурсії
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content class="mainContent"  *ngIf="tours[tours.length-1]">
+  <ion-card  class="card" *ngFor="let tour of tours, index as i"  routerLink="{{tour.id}}">
+    <ion-card-header>
+      <ion-card-title routerLink="{{tour.id}}" >{{ tour.title }}</ion-card-title>
+    </ion-card-header>
+  
+    <ion-card-content  class="cardContent">
+      <img src={{toursImages[i]}} width="100%" height="270px" routerLink="{{tour.id}}">
+      <p class="content" routerLink="{{tour.id}}">
+        <b>тип: </b>{{tour.route_type}} <br>
+        <b>довжина: </b>{{tour.length}} <br>
+        <b>cкладність: </b>{{tour.difficulty}}
+      </p>
+      <div class="content" *ngIf="postLikes[i] && postLikes[i].count">
+        <p>{{tour.created_at | slice:0:10}}
+          <span style="right: 5px; position: absolute"  (click)="userLikesPost(tour.id, postLikes[i].count)">
+            <i class="fa fa-thumbs-up fa-lg"  id="thumb" ></i>
+            <p style="display: inline;font-size: 20px; margin-left:8px;">{{postLikes[i].count}}</p>
+          </span>
+        </p>
+      </div>
+      <div class="content" *ngIf="!postLikes[i]">
+        <p>{{tour.created_at | slice:0:10}}
+          <span style="right: 5px; position: absolute"  (click)="userLikesPost(tour.id, 0)">
+            <i class="fa fa-thumbs-up fa-lg"  id="thumb" ></i>
+            <p style="display: inline;font-size: 20px; margin-left:8px;">0</p>
+          </span>
+        </p>
+      </div>  
+  </ion-card-content> 
+  </ion-card>
+</ion-content>
+
+<ion-footer  *ngIf="!tours[tours.length-1]">
+  <ion-toolbar class="footer">
+    <ion-title class="footerTitle">
+      Footer
+    </ion-title>
+  </ion-toolbar>
+</ion-footer>

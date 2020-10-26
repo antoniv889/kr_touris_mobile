@@ -1,0 +1,7 @@
+{
+  "name": "krivyiRig",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}

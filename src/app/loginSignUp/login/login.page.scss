@@ -1,0 +1,69 @@
+#header {
+  --background: rgb(28, 64, 107);
+}
+.mainContent {
+  --background: rgb(28, 64, 107);
+}
+.imgWrap {
+  text-align: center;
+  border-radius: 100%;
+  box-shadow: none;
+  margin-top: 10%;
+}
+.imgWrap img {
+  border-radius: 100%;
+  width: 180px;
+}
+.center {
+  text-align: center;
+  color: white;
+  padding: 10px 20px 0px 20px;
+  margin-top: -20px;
+}
+.center p {
+  font-size: 15px;
+  margin-top: 0px;
+}
+.loginbutton {
+  border-radius: 20px;
+  color: red;
+  font-size: 20px;
+  background-color: white;
+  width: 60%;
+  height: 40px;
+}
+.input {
+  background-color: #ffffff00;
+  text-align: center;
+}
+.inputdata {
+  background-color: #1c406b00;
+  color: white;
+  width: 60%;
+  height: 40px;
+  border: 2px solid #0492c2;
+  border-radius: 20px;
+  padding-left: 10px;
+}
+.inputdata input:focus {
+  background-color: #1c406b00;
+  color: white;
+  width: 60%;
+  height: 40px;
+  border: 2px solid #0492c2;
+  border-radius: 20px;
+  padding-left: 10px;
+}
+.googleFacebook {
+  text-align: center;
+  margin-top: 10%;
+  color: white;
+}
+.icons ion-icon {
+  font-size: 35px;
+  padding: 15px;
+  margin-top: -20px;
+}
+.icons {
+  text-align: center;
+}

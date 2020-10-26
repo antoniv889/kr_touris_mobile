@@ -1,0 +1,55 @@
+<div class="loader" *ngIf="!imgUrl"></div>
+<ion-header *ngIf="imgUrl">
+    <ion-toolbar class="header">
+        <ion-buttons slot="start">
+            <ion-menu-button>
+
+            </ion-menu-button>
+        </ion-buttons>
+        <ion-title>
+        </ion-title>
+    </ion-toolbar>
+</ion-header>
+<ion-content *ngIf="imgUrl">
+    <div class="objectName">
+        <h1><b> {{gastro.title}} </b></h1>
+    </div>
+    <div class="objectContent">
+        <h3><b> Опис:</b></h3>
+        <p>{{gastro.desc}}</p>
+        <h3><b> Рейтинг:</b></h3>
+        {{gastro.google_rating}}
+        <i class="text-yellow fa fa-star fa-lg" style="color: #ecdc10"></i>
+        <br>
+        <h3><b> Контакти:</b></h3>
+        <span> {{gastro.address}}</span>
+    </div>
+    <div class="objectContent">
+        <img src="{{imgUrl}}" width="100%">
+    </div><br><br>
+    <hr>
+    <hr>
+    <!-- <h3 class="objectContent"><b> Мапа:</b></h3>
+  <agm-map [latitude]="latitude" [longitude]="longitude" [zoom]="12" id="map">
+    <agm-marker [latitude]="latitude" [longitude]="longitude" ></agm-marker>
+  </agm-map> -->
+    <br>
+
+    <h3 class="objectContent"><b> Коментарії:</b></h3>
+    <form (ngSubmit)="addComment(f)" #f="ngForm">
+        <div class="form-group inputForm">
+            <input class="form-control" id="content" name="content" ngModel required placeholder="залиште коментар">
+            <button class="btn btn-success ml-2" type="submit" [disabled]="!f.valid">
+                <ion-icon name="send"></ion-icon>
+            </button>
+        </div>
+        <br>
+    </form>
+    <div *ngFor="let comment of comments;index as i">
+        <div class="comment objectContent">
+            <b>{{comment.author.name}}</b>
+            <p style="padding-right: 5px;">{{comment.content}}</p>
+        </div>
+    </div>
+    <br><br><br><br>
+</ion-content>

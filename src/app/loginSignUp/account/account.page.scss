@@ -1,0 +1,59 @@
+.header{
+    --background: #1C426E;
+    color:white;
+    text-align: right;
+}
+.mainContent {
+    padding: 15px;
+}
+.images img{
+    height: 120px;
+    width: 160px;
+    border-radius: 5px;
+}
+h5{
+    margin: 0px;
+}
+.tbl {
+    height: 40px;
+    background-color: #d6d6d6;
+}
+.order {
+    background-color: whitesmoke;
+}
+.card{
+    box-shadow: none;
+}
+.card p{
+    font-size: 1.2em;
+    color: blue;
+}
+.routes{
+    background-color: rgb(223, 223, 223);
+    height: 100px;
+    font-size: 1.7em;
+    color: blue;
+    margin-bottom: 10px;
+}
+.routes p{
+    padding: 20px 50px 0px 20px;
+    line-height: 0.9em;
+}
+
+.loginButton{
+    border-radius: 5px;
+    background-color: #FD2E54;
+    height: 30px;
+    margin-top: 14px;
+    width: 26%;
+    color:white;
+    float: right;
+}
+.logoutButton {
+    border-radius: 10px;
+    background-color: #FD2E54;
+    height: 30px;
+    margin-top: 14px;
+    width: 50%;
+    color:white;
+}

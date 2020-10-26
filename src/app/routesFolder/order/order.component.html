@@ -1,0 +1,44 @@
+<ion-header>
+    <ion-toolbar class="header">
+        <ion-title>
+            <span>
+                Створити заявку
+            </span>
+            <ion-icon (click)="close()" name="close"></ion-icon>
+        </ion-title>
+    </ion-toolbar>
+</ion-header>
+<ion-content>
+    
+    <div class="content">
+        <ion-list>
+            <ion-item>
+                <ion-label position="floating">Ім'я</ion-label>
+                <ion-input type="text" id="name" name="name" [value]="user_name" (input)="changeName($event)" required>
+                </ion-input>
+            </ion-item>
+    
+            <ion-item>
+                <ion-label position="floating">Емейл</ion-label>
+                <ion-input type="email" id="email" name="email" [value]="user_email" (input)="changeEmail($event)">
+                </ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-label position="floating">Номер телефону</ion-label>
+                <ion-input type="text" id="phone" name="phone" required [value]="user_phone" (input)="changePhone($event)">
+                </ion-input>
+            </ion-item>
+        </ion-list>
+        <ion-list>
+            <ion-item>
+                <ion-label >Гід</ion-label>
+                <ion-select [(ngModel)]="gid_id" okText="Okay" cancelText="Dismiss" (ionChange)="checkGid(gid_id)">
+                    <ion-select-option [value]="gid.id" *ngFor="let gid of gids" >{{gid.name}}</ion-select-option>
+                </ion-select>
+            </ion-item>
+        </ion-list>
+        <div>
+            <ion-button color="success" expand="full" (click)="addOrder()">Підтвердити</ion-button>
+        </div>
+    </div>
+</ion-content>

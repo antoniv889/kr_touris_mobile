@@ -1,0 +1,34 @@
+<ion-header>
+    <ion-toolbar class="header">
+        <ion-title>
+            <span>
+                Фільтри
+            </span>
+            <ion-icon (click)="close()" name="close"></ion-icon>
+        </ion-title>
+    </ion-toolbar>
+</ion-header>
+<ion-content >
+    <div class="content">
+        <div class="col-lg-3 mt-3">
+            <span> <b> Відображати </b> </span>
+            <div class="filterInput" *ngFor="let type of types; index as i">
+                <ion-item>
+                    <ion-checkbox color="primary" [(ngModel)]="type.checked" (ionChange)="selectType(type.id, i)"></ion-checkbox>
+                    <ion-label>
+                        {{type.title}}
+                    </ion-label>
+                </ion-item>
+            </div><br>
+            <span><b> Популярність </b></span>
+            <div class="filterInput">
+                <ion-item>
+                    <ion-checkbox color="primary" [(ngModel)]="popularity" (ionChange)="asc('popularity')"></ion-checkbox>
+                    <ion-label>
+                        спочатку найпопулярніші
+                    </ion-label>
+                </ion-item>
+            </div>
+        </div>
+    </div>
+</ion-content>

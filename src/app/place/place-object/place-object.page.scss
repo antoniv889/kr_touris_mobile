@@ -1,0 +1,87 @@
+.header{
+    --background: #1C426E;
+    color:white;
+    text-align: right;
+}
+.card img{
+    border-radius: 7px;
+}
+.footer{
+    --background: #1C426E;
+    color:white;
+    text-align: center;
+    height: 50px;
+}
+#map {
+    height: 70%;
+    width: 100%;
+    right: 50px;
+    margin: 50px;
+}
+.objectContent{
+    margin: 20px 15px 0px 15px;
+}
+.bt{
+    border-radius: 30px;
+    background-color: #FD2E54;
+    width: 140px;
+    transform: translate(80%, 0px);
+    height: 40px;
+}
+.inputForm {
+    padding: 15px 15px 0px 15px;
+    margin-bottom: -25px;
+}
+.comment{
+    background-color: whitesmoke;
+    padding: 15px 15px 8px 15px;
+    margin-bottom: -10px;
+}
+.btn {
+    height: 40px;
+    border-radius: 0px 8px 8px 0px;
+    background-color: #FD2E54;
+    color: black;
+    font-size: 15px;
+    width: 35px;
+}
+.commentInput{
+    width: 80%; 
+    border-radius: 10px; 
+    font-size: 15px; 
+    padding: 5px;
+}
+#content{
+    width: 80%;
+    height: 40px;
+    border: solid 1px #dedede;
+    border-radius: 8px 0px 0px 8px;
+    font-size: 15px;
+    padding: 8px;
+}
+.objectName{
+    margin: -10px 14px 0px 14px;
+    display: block;
+    background-color: #FD2E54;
+}
+.objectName h1{
+    padding: 9px 15px 9px 15px;
+}
+.loader {
+    border: 7px solid #f1f1f1;
+    border-top: 7px solid #FD2E54;
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    -webkit-animation: spin 2s linear infinite;
+    animation: spin 1s linear infinite;
+    margin-top: 30%;
+    margin-left: 36%;
+}
+
+
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}

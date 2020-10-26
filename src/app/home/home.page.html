@@ -1,0 +1,80 @@
+<ion-content [fullscreen]="true" class="mainContent">
+    <div class="imgWrap">
+        <img src="assets/images/logo.png" width="30%">
+    </div>
+    <h2 class="main">З ЧОГО ПОЧНЕМО?</h2>
+    <hr>
+    <div class="info">
+        <div class="menuItem">
+            <div class="block-1">
+                <ion-icon name="pin-outline"></ion-icon>
+            </div>
+            <div class="block-2">
+                <h1 [routerLink]="'/places'">
+                    МІСЦЯ
+                    <hr class="line">
+                 </h1>
+            </div>
+        </div>
+
+        <div class="menuItem">
+            <div class="block-1">
+                <ion-icon name="navigate-outline"></ion-icon>
+            </div>
+            <div class="block-2">
+                <h1 [routerLink]="'/routes-categories'">
+                    МАРШРУТИ
+                    <hr class="line">
+                 </h1>
+            </div>
+        </div>
+
+        <div class="menuItem">
+            <div class="block-1">
+                <ion-icon name="library-outline"></ion-icon>
+            </div>
+            <div class="block-2">
+                <h1 [routerLink]="'/places/14'">
+                    МУЗЕЇ
+                    <hr class="line">
+                 </h1>
+            </div>
+        </div>
+
+        <div class="menuItem">
+            <div class="block-1">
+                <ion-icon name="man-outline"></ion-icon>
+            </div>
+            <div class="block-2">
+                <h1 [routerLink]="'/gids'">
+                    ГІДИ
+                    <hr class="line">
+                 </h1>
+            </div>
+        </div>
+        <div class="menuItem">
+            <div class="block-1">
+                <ion-icon name="calendar-outline"></ion-icon>
+            </div>
+            <div class="block-2">
+                <h1 [routerLink]="'/events'">
+                    ПОДІЇ
+                 </h1>
+            </div>
+        </div>
+        <hr>
+        <hr>
+        <div class="btmInfo">ДЛЯ ВІДПОЧИНКУ ТА ПОНОВЛЕННЯ СИЛ</div>
+        <div class="menuItem">
+            <div class="block-1">
+                <ion-icon name="restaurant-outline"></ion-icon>
+            </div>
+            <div class="block-2 btm">
+                <h1 [routerLink]="'/gastro'">
+                    ГАСТРО ТА ГОТЕЛІ
+                 </h1>
+            </div>
+        </div>
+    </div>
+
+</ion-content>

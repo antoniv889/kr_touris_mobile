@@ -1,0 +1,45 @@
+<div class="loader" *ngIf="!hotels[hotels.length-1]"></div>
+
+<ion-header *ngIf="hotels[hotels.length-1]">
+    <ion-toolbar class="header">
+        <ion-buttons slot="start">
+            <ion-menu-button>
+            </ion-menu-button>
+        </ion-buttons>
+        <ion-title>
+            <ion-icon (click)="showModal()" name="options-outline"></ion-icon>
+        </ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content class="mainContent" *ngIf="hotels[hotels.length-1]">
+    <ion-card *ngFor="let object of hotels_filter; index as i" id="category">
+        <ion-card-header>
+            <ion-card-title routerLink="{{object.id}}">{{ object.title }}</ion-card-title>
+        </ion-card-header>
+        
+        <ion-card-content class="cardContent">
+            <img src="http://kryvyirih.travel{{object.main_img.url}}" width="100%" height="100%"
+                routerLink="{{object.id}}">
+           
+            <div class="like">
+                <span class="rating">
+                    {{object.google_rating}}
+                    <i class="text-yellow fa fa-star fa-lg" style="color: #ecdc10;"></i>
+                </span>
+                <span class="info">
+                    <i class="fa fa-thumbs-up fa-lg" (click)="userLikesPost(object.id, postLikes[i], i)" id="thumb"></i>
+                    <p style="display: inline; font-size: 20px; margin-left:8px;">{{postLikes[i]}}</p>
+                </span>
+            </div>
+        </ion-card-content>
+    </ion-card>
+</ion-content>
+<!-- 
+<ion-footer *ngIf="hotels[hotels.length-1]">
+    <ion-toolbar class="footer">
+        <ion-title class="footerTitle">
+            Footer
+        </ion-title>
+    </ion-toolbar>
+</ion-footer> -->

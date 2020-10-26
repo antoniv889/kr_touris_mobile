@@ -1,0 +1,34 @@
+.header{
+    --background: #1C426E;
+    color:white;
+    text-align: right;
+}
+
+.footer{
+    --background: #1C426E;
+    color:white;
+    text-align: center;
+    height: 50px;
+}
+
+.loader {
+    border: 7px solid #f1f1f1;
+    border-top: 7px solid #FD2E54;
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    -webkit-animation: spin 2s linear infinite;
+    animation: spin 1s linear infinite;
+    margin-top: 30%;
+    margin-left: 36%;
+}
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.content h1 {
+    margin-top: 0px;
+    font-size: 26px;
+}
+

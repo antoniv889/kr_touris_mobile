@@ -1,0 +1,116 @@
+<ion-header>
+    <ion-toolbar class="header">
+        <ion-buttons slot="start">
+            <ion-menu-button>
+
+            </ion-menu-button>
+        </ion-buttons>
+        <ion-title>
+            Особистий кабінет
+        </ion-title>
+    </ion-toolbar>
+</ion-header>
+
+
+<ion-content >
+    <div class="mainContent">
+        <div *ngIf="!username" style="text-align: center;">
+            <button (click)="login()" class="logoutButton">увійти</button>
+        </div>
+
+        <div *ngIf="username">
+            <button (click)="logout()" class="loginButton">вийти</button>
+            <h3 >{{username}}</h3>
+            <h3 >{{email}}</h3>
+            <br>
+        </div>
+        <div *ngIf="username">
+            <h3> Мої записи </h3>
+            <ion-grid class="tbl">
+                <!-- user -->
+                <ion-row *ngIf="!ifGid">
+                    <ion-col>
+                        <h5>
+                            Маршрут
+                        </h5>
+                        <br>
+                    </ion-col>
+                    <ion-col>
+                        <h5>
+                            Гід
+                        </h5><br>
+                    </ion-col>
+                </ion-row>
+                <!-- gid -->
+                <ion-row *ngIf="ifGid">
+                    <ion-col>
+                        <h5>
+                            Маршрут
+                        </h5>
+                        <br>
+                    </ion-col>
+                    <ion-col>
+                        <h5>
+                            Ім'я 
+                        </h5><br>
+                    </ion-col>
+                    <ion-col>
+                        <h5>
+                            Телефон 
+                        </h5><br>
+                    </ion-col>
+                    <ion-col>
+                        <h5>
+                            Емейл 
+                        </h5><br>
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
+            <div *ngFor="let order of orders;index as i" class="order">
+                <!-- user -->
+                <ion-grid *ngIf="!ifGid && i<6">
+                    <ion-row>
+                        <ion-col>
+                            <h5>
+                                {{order.post.title}}
+                            </h5>
+                            <br>
+                        </ion-col>
+                        <ion-col>
+                            <h5>
+                                {{order.gid.name}} 
+                            </h5><br>
+                        </ion-col>
+                    </ion-row>
+                </ion-grid>
+
+                <!-- gid -->
+                <ion-grid *ngIf="ifGid  && i<6">
+                    <ion-row>
+                        <ion-col size="3">
+                            <h5>
+                                {{order.post.title}}
+                            </h5>
+                            <br>
+                        </ion-col>
+                        <ion-col size="3">
+                            <h5>
+                                {{order.name}} 
+                            </h5><br>
+                        </ion-col>
+                        <ion-col size="3">
+                            <h5>
+                                {{order.phone}} 
+                            </h5><br>
+                        </ion-col>
+                        <ion-col size="3">
+                            <h5>
+                                {{order.email}} 
+                            </h5><br>
+                        </ion-col>
+                    </ion-row>
+                </ion-grid>
+            </div>
+        </div>
+    </div>
+</ion-content>

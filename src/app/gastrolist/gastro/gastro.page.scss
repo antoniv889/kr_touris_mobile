@@ -1,0 +1,105 @@
+.header{
+    --background: #1C426E;
+    color:white;
+    text-align: right;
+}
+.card img{
+    border-radius: 7px;
+}
+.footer{
+    --background: #1C426E;
+    color:white;
+    text-align: center;
+    height: 50px;
+}
+
+#map {
+    height: 70%;
+    width: 100%;
+    right: 50px;
+    margin: 50px;
+}
+.objectContent{
+    margin: 20px 14px 0px 14px;
+}
+.bt{
+    border-radius: 30px;
+    background-color: #FD2E54;
+    width: 140px;
+    transform: translate(80%, 0px);
+    height: 40px;
+}
+.comment{
+    background-color: whitesmoke;
+    padding: 15px 0px 8px 15px;
+}
+.btn {
+    // padding: 15px 0px 8px 15px;
+    width: 77%;
+    height: 40px;
+    border-radius: 30px;
+    background-color: #FD2E54;
+    color: black;
+    font-size: 15px;
+}
+.commentInput{
+    width: 80%; 
+    border-radius: 10px; 
+    font-size: 15px; 
+    padding: 5px;
+}
+.content{
+    padding: 28px;
+}
+.inputForm {
+    padding: 15px 15px 0px 18px;
+    margin-bottom: -25px;
+}
+.objectName{
+    margin: -10px 14px 0px 14px;
+    display: block;
+    background-color: #FD2E54;
+    height: 50px;
+}
+.objectName h1{
+    padding: 9px 10px 5px 10px;
+}
+.loader {
+    border: 7px solid #f1f1f1;
+    border-top: 7px solid #FD2E54;
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    -webkit-animation: spin 2s linear infinite;
+    animation: spin 1s linear infinite;
+    margin-top: 30%;
+    margin-left: 36%;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+.cardContent{
+    color: black;
+    padding: 0px;
+}
+.like {
+    height: 40px;
+    padding: 10px 0px 38px 0px
+}
+
+.rating {
+    padding-left: 15px;
+    font-size: 17px;
+}
+.like .info{
+    display: inline;
+    position: relative;
+    bottom: 4px;
+    right: 10px;
+    float: right;
+}
+#thumb {
+    color: #1a76ff;
+}

@@ -1,0 +1,96 @@
+<div class="loader" *ngIf="!imgUrl"></div>
+<ion-header *ngIf="imgUrl">
+    <ion-toolbar class="header">
+        <ion-buttons slot="start">
+            <ion-menu-button></ion-menu-button>
+        </ion-buttons>
+        <ion-title>
+            Маршрути
+        </ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content *ngIf="imgUrl">
+    <div class="objectName">
+        <h1><b> {{route.title}} </b></h1>
+    </div>
+    <img src="{{imgUrl}}" class="images" width="100%">
+    <h3 class="objectContent"><b> Опис:</b></h3>
+    <p class="objectContent">{{route.desc}}</p>
+    <h3 class="objectContent"><b> Мапа:</b></h3>
+    <a href="{{mapLink}}">
+        <agm-map [latitude]="latitude[0]" [longitude]="longitude[0]" [zoom]="12" id="map">
+            <!-- <agm-direction *ngFor="let lat of latitude; index as i"
+            [origin]="{lat:latitude[i],lng:longitude[i]}"
+            [destination]="{lat: latitude[i+1], lng: longitude[i+1]}"
+            >
+            </agm-direction> -->
+            <agm-polyline *ngFor="let lat of latitude; index as i" [strokeColor]="'green'" [strokeWeight]="1">
+                <agm-marker [latitude]="lat" [longitude]="longitude[i]"></agm-marker>
+                <agm-polyline-point *ngFor="let lat of latitude; index as i" [latitude]="lat" [longitude]="longitude[i]">
+                </agm-polyline-point>
+    
+            </agm-polyline>
+        </agm-map>
+    </a>
+    <ng-container *ngFor="let object of excursions; index as i">
+
+        <ion-grid class="col-obj">
+            <ion-row>
+                <ion-col size="1">
+                    <i class="fas fa-map-marker-alt"></i>
+                </ion-col>
+                <ion-col size="10">
+                    <h1 class="objectTitle" routerLink="/places/{{object.category_id}}/{{object.id}}">
+                        <b>{{object.title}} </b>
+                    </h1>
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+
+        <p class="objectContent objectDesc">{{object.desc}}</p>
+        <div routerLink="/places/{{object.category_id}}/{{object.id}}">
+            <img src="http://www.kryvyirih.travel{{object.main_img.url}}" width="100%">
+        </div>
+        <br>
+        <div *ngIf="i != excursions.length - 1" class="ion-text-center dotIcon">
+            <i class="fas fa-circle"></i> <br>
+            <i class="far fa-circle"></i><br>
+            <i class="far fa-circle"></i><br>
+            <i class="fas fa-chevron-down"></i>
+        </div>
+        <!-- <hr style=" border-bottom: 1px solid #ccc;" /> -->
+    </ng-container>
+    <div class="order" *ngIf="gids.length>0">
+        <h3><b> Запис на маршрут </b></h3>
+        <button class="orderbtn" (click)="showOrderBuilder()"> створити заявку </button>
+    </div>
+    <h3 class="objectContent"><b> Коментарії:</b></h3>
+    <form (ngSubmit)="addComment(f)" #f="ngForm">
+        <div class="form-group inputForm">
+            <input class="form-control" id="content" name="content" ngModel required>
+            <button class="btn btn-success " type="submit" [disabled]="!f.valid">
+                <ion-icon name="send"></ion-icon>
+            </button>
+        </div>
+        <br>
+    </form>
+    <div *ngFor="let comment of comments;index as i">
+        <div class="comment objectContent">
+            <i class="fas fa-ellipsis-v settingIcon" (click)="showPopover($event, comment.id, i)"></i>
+            <b>{{comment.author.name}}</b>
+            <p style="padding-right: 5px;" *ngIf="editMode != i">{{comment.content}}</p><br>
+            <input type="text" class="commentInput" [(ngModel)]="comment.content" *ngIf="editMode == i">
+            <ion-button color="primary" (click)="editComment(comment.content, comment.id)" *ngIf="editMode == i">Підтвердити</ion-button>
+        </div>
+    </div>
+    <br><br><br><br>
+</ion-content>
+
+<!-- <ion-footer *ngIf="imgUrl">
+  <ion-toolbar class="footer">
+    <ion-title class="footerTitle">
+      Footer
+    </ion-title>
+  </ion-toolbar>
+</ion-footer> -->

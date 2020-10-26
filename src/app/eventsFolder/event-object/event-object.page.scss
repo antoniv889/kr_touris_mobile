@@ -1,0 +1,50 @@
+.header{
+    --background: #1C426E;
+    color:white;
+    text-align: right;
+}
+.objectName{
+    margin: -10px 14px 0px 14px;
+    display: block;
+    background-color: #FD2E54;
+}
+.objectName h1{
+    padding: 9px 10px 5px 10px;
+}
+.content img {
+    padding: 5px 15px 15px 15px;
+}
+.objectContent {
+    padding: 0px 17px 15px 17px;
+}
+#content{
+    width: 260px;
+    height: 40px;
+    border: solid 1px #dedede;
+    border-radius: 8px 0px 0px 8px;
+    font-size: 15px;
+    padding: 8px;
+}
+.inputForm {
+    padding: 15px 15px 0px 18px;
+    margin-bottom: 15px;
+}
+.btn {
+    height: 40px;
+    border-radius: 0px 8px 8px 0px;
+    background-color: #FD2E54;
+    color: black;
+    font-size: 15px;
+    width: 35px;
+}
+.comment{
+    background-color: whitesmoke;
+    padding: 15px 15px 8px 15px;
+    margin-bottom: -10px;
+}
+.commentText{
+    margin: 20px 18px 0px 18px;
+}
+form {
+    margin-bottom: -30px;
+}

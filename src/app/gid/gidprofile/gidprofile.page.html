@@ -1,0 +1,32 @@
+<div class="loader" *ngIf="!gid.img"></div>
+
+<ion-header *ngIf="gid.img">
+    <ion-toolbar class="header">
+        <ion-buttons slot="start">
+            <ion-menu-button>
+            </ion-menu-button>
+        </ion-buttons>
+        <ion-title>
+            Гіди
+        </ion-title>
+    </ion-toolbar>
+</ion-header>
+<ion-content *ngIf="gid.img">
+    <img src="http://kryvyirih.travel{{gid.img.url}}" class="content" style="padding: 15px 15px 0px 15px;" width="100%">
+    <div class="content" style="margin: 10px 15px 0px 15px;padding: 15px;">
+        <h1>
+            <b>{{gid.name}}</b>
+        </h1><hr>
+
+        <b>Опис: </b>
+        {{gid.gid_desc}}<hr>
+
+        <b>Контакти: </b>
+        {{gid.contacts}}<hr>
+
+        <a *ngIf="gid.link_1" href="{{gid.link_1}}">Facebook</a>
+        <a *ngIf="gid.link_2" href="{{gid.link_2}}">Вебсайт</a>
+
+    </div>
+    <hr><hr><hr>
+</ion-content>

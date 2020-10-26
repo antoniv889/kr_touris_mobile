@@ -1,0 +1,32 @@
+<div class="loader" *ngIf="!categories[categories.length-1]"></div>
+
+<ion-header *ngIf="categories[categories.length-1]">
+    <ion-toolbar class="header">
+        <ion-buttons slot="start">
+            <ion-menu-button>
+
+            </ion-menu-button>
+        </ion-buttons>
+        <ion-title>
+            Оберіть категорію
+        </ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content class="mainContent" *ngIf="categories[categories.length-1]">
+    <ion-card *ngFor="let categorie of categories; index as i" class="category" [routerLink]="categorie.id">
+        <ion-card-content class="cardContent">
+            <ion-card-title class="card-title">
+                <h1> <b> {{categorie.title}} </b> </h1>
+            </ion-card-title>
+        </ion-card-content>
+    </ion-card>
+</ion-content>
+
+<!-- <ion-footer *ngIf="categories[categories.length-1]">
+    <ion-toolbar class="footer">
+        <ion-title class="footerTitle">
+            Footer
+        </ion-title>
+    </ion-toolbar>
+</ion-footer> -->

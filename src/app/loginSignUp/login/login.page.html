@@ -1,0 +1,44 @@
+<ion-header>
+    <ion-toolbar id="header">
+        <ion-buttons slot="start">
+            <a href="/account">
+                <ion-button color="light">назад</ion-button>
+            </a>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+<ion-content class="mainContent">
+    <div class="imgWrap">
+        <img src="assets/images/logo.png" width="35%">
+    </div>
+    <div class="center">
+        <h1>
+            ТУРИСТИЧНИЙ ПУТІВНИК
+            <p>КРИВОГО РОГУ</p>
+        </h1>
+    </div>
+    <ion-list class="input">
+        <form (ngSubmit)="onSignIn(f)" #f="ngForm">
+            <div class="form-group">
+                <input class="inputdata form-control" ngModel placeholder="пошта" name="email" type="email" id="email" required>
+            </div>
+            <hr>
+            <div class="form-group">
+                <input class="inputdata form-control" placeholder="пароль" name="password" ngModel type="password" id="password" required>
+            </div>
+            <!-- <p style="color: red; text-align: center;">{{message}}</p> -->
+            <hr>
+            <button type="submit" class="loginbutton" [disabled]="!f.valid">Увійти</button>
+            <hr>
+        </form>
+        <a routerLink="/sign-up">У вас немає аккаунта?</a>
+    </ion-list>
+
+    <p class="googleFacebook">
+        або увійдіть за допомогою
+    </p><br>
+    <div class="icons">
+        <ion-icon name="logo-google" (click)="googleLogin()" style="color: #d1d1ff;"></ion-icon>
+        <ion-icon name="logo-facebook" (click)="facebookLogin()" style="color: #d1d1ff;"></ion-icon>
+    </div>
+</ion-content>

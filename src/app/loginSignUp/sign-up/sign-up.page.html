@@ -1,0 +1,39 @@
+<ion-header>
+  <ion-toolbar  id="header">
+    <ion-buttons slot="start">
+        <a href="/account">
+            <ion-button color="light">назад</ion-button>
+        </a>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content  class="mainContent">
+  <div class="imgWrap">
+    <img src="assets/images/user.png" width="35%">
+  </div><hr>
+  <div class="center">
+    <p>
+      створити аккаунт
+    </p>
+  </div>
+  <ion-list class="input">
+    <form (ngSubmit)="onSignUp(f)" #f="ngForm">
+      <div class="form-group">
+        <input type="text" class="form-control inputdata" id="username" placeholder="введіть ім'я"
+        name="username" ngModel required>
+      </div><hr>
+      <div class="form-group">
+        <input type="email" class="form-control inputdata" id="email" placeholder="введіть пошту"
+        name="email" ngModel required>
+      </div><hr>
+      <div class="form-group">
+        <input type="password" class="form-control inputdata" id="password" placeholder="введіть пароль"
+        name="password" ngModel required>
+      </div><hr>  
+      <button type="submit"  class="loginbutton" [disabled]="!f.valid" >Зареєструватися</button>
+    </form>
+    
+  </ion-list>
+
+
+</ion-content>

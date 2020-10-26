@@ -1,0 +1,72 @@
+<ion-header>
+    <ion-toolbar class="header">
+        <ion-title>
+            <span>
+                Фільтри
+            </span>
+            <ion-icon (click)="close()" name="close"></ion-icon>
+        </ion-title>
+    </ion-toolbar>
+</ion-header>
+<ion-content >
+    <div class="content">
+        <span> <b> Тип маршруту: </b> </span><br>
+        <div class="filterInput" *ngFor="let routetype of routetypes; index as i">
+            <ion-item>
+                <ion-checkbox color="primary" [(ngModel)]="routetype.checked" (ionChange)="selectType(i)"></ion-checkbox>
+                <ion-label>
+                    {{routetype.title}}
+                </ion-label>
+            </ion-item>
+        </div>
+        <br>
+        <span><b>Довжина</b></span>
+        <ion-list>
+            <ion-radio-group value="{{length_sel}}">
+                <div class="filterInput">
+                    <ion-item>
+                        <ion-radio color="primary" (click)="dsc('length')" value="1"></ion-radio>
+                        <ion-label >спочатку найдовших </ion-label>
+                    </ion-item>
+                </div>
+                <div class="filterInput">
+                    <ion-item>
+                        <ion-radio color="primary" (click)="asc('length')" value="2"></ion-radio>
+                        <ion-label>спочатку найкоротших </ion-label>
+                    </ion-item>
+                </div>
+            </ion-radio-group>
+        </ion-list><br>
+        <span> <b>Cкладність</b>  </span>
+        <ion-list>
+            <ion-radio-group value="{{difficulty_sel}}"> 
+                <div class="filterInput">
+                    <ion-item>
+                        <ion-radio color="primary" (click)="asc('difficulty')" value="1"></ion-radio>
+                        <ion-label>спочатку легші </ion-label>
+                    </ion-item>
+                </div>
+                <div class="filterInput">
+                    <ion-item>
+                        <ion-radio color="primary" (change)="dsc('difficulty')" value="2"></ion-radio>
+                        <ion-label >спочатку складніші</ion-label>
+                    </ion-item>
+                </div>  
+            </ion-radio-group>
+        </ion-list>
+        <span><b>Популярність</b></span>
+        <div class="filterInput">
+            <ion-item>
+                <ion-checkbox [(ngModel)]="popularity" color="primary" (ionChange)="asc('popularity')"></ion-checkbox>
+                <ion-label >спочатку найпопулярніші</ion-label>
+            </ion-item>
+        </div>  
+        <span><b>Актуальність</b></span>
+        <div class="filterInput">
+            <ion-item>
+                <ion-checkbox [(ngModel)]="actuality" color="primary" (ionChange)="asc('created_at')"></ion-checkbox>
+                <ion-label >спочатку найактуальніші</ion-label>
+            </ion-item>
+        </div>  
+    </div>
+</ion-content>
